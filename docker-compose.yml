@@ -1,1 +1,22 @@
+version: '3.8'
 
+services:
+  postgres_server:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - jason_network
+    restart: always
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  jason_network:
+    name: jason
