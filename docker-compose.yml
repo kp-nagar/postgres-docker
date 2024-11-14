@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  postgres_server:
+  postgres_service:
     image: postgres:15
     container_name: postgres_db
     environment:
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
