@@ -12,6 +12,8 @@ services:
     networks:
       - jason_network
     restart: always
+    ports:
+      - "6001:5432"
 
 volumes:
   postgres_data:
